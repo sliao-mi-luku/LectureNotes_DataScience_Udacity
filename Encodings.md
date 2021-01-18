@@ -1,4 +1,4 @@
-#Encodings
+# Encodings
 
 The default of encoding by Pandas is utf-8. When handling a dataset with unknown encoding other than utf-8, an *UnicodeDecodeError* occurs.
 
@@ -13,8 +13,17 @@ alias_candidates = set(aliases.values())
 
 for candidate in alias_candidates:
     try:
-        pd.read_csv('csv_file_with_unknown_encoding', encode = candidate)
+        pd.read_csv('csv_file_with_unknown_encoding.csv', encode = candidate)
         print("Encoding is {}".format(candidate))
     except:
         pass
+```
+
+## chardet library
+
+```python3
+import chardet
+
+with open('csv_file_with_unknown_encoding.csv', 'rb') as f:
+    print(chardet.detect(f.read()))
 ```
