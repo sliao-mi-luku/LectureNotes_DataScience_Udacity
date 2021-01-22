@@ -4,6 +4,10 @@ Below lists several useful methods used in the study of data science.
 
 
 ## Pandas
+
+---
+`pd.concat([df1, df2], axis = 1)` concatenates 2 dataframes df1 and df2 horizontally (side-by-side)
+
 ---
 `Series.replace`/`DataFrame.replace` can replace texts. Ex. `df['col'].replace(REGULAR_EXPRESSION, regex = True)`
 
