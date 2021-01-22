@@ -9,6 +9,9 @@ Below lists several useful methods used in the study of data science.
 `pd.concat([df1, df2], axis = 1)` concatenates 2 dataframes df1 and df2 horizontally (side-by-side)
 
 ---
+`df1.merge(df2, how = 'left', 'on' = ['year', 'salary'])` merges df2 to df1 using `year` and `salary` as common keys.
+
+---
 `Series.replace`/`DataFrame.replace` can replace texts. Ex. `df['col'].replace(REGULAR_EXPRESSION, regex = True)`
 
 [Regex Cheatsheet](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
