@@ -59,7 +59,8 @@ cur.execute("CREATE TABLE data_table (id TEXT, name TEXT, score INTEGER, PRIMARY
 ## Suppuse we have some variables storing the value we need (id = id_value, name = name_value, score = score_value)
 
 ## Insert the values into the table
-cur.execute("INSERT INTO data_table (id, name, score) VALUES (?, ?, ?);", (id_value, name_value, score_value)) # use '?' to serve as the placeholder
+sql_insert_command = 'INSERT INTO data_table (id, name, score) VALUES ("?", "?", ?);'.format(id_value, name_value, score_value)
+cur.execute(sql_insert_command)
 
 ```
 
