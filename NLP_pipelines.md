@@ -116,6 +116,34 @@ lemmed = [WordNetLemmatizer().lemmatize(w, pos = 'v') for w in lemmed]
 
 **Bag of Words**
 
+``` python3
+import re
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem.wordnet import WordNetLemmatizer
+from sklearn.feature_extraction.text import CountVectorizer
+
+STOPWORDS = stopwords.words("english")
+
+lemmatizer = WordNetLemmatizer()
+
+
+def tokenize(text):
+  text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())
+  tokens = word_tokenize(text)
+  tokens = [lemmatizer.lemmatize(w) for w in tokens if w not in STOPWORDS]
+  return tokens
+
+vect = CountVectorizer(tokenizer = tokenize) # func tokenizer will process each element (a sentence) of copos
+
+x = vect.fit_transform(corpus) # corpus is a list of sentences
+
+x.toarray() # view x
+
+vect.vocabulary_ # view token vocabulary and counts
+
+```
+
 **TF-IDF**
 
 `TF` (term frequency)
@@ -126,13 +154,50 @@ td(t, d) = count(t, d) / |d|
 
 idf(t, D) = log(|D| / |{all d that contain t}|)
 
-**tfidf(t, d, D) = td(t, d) x idf(t, D)**
+`tfidf(t, d, D) = td(t, d) x idf(t, D)`
+
+```python3
+from sklearn.feature_extraction.text import TfidfTransformer
+
+tfidf_transformer = TfidfTransformer(smooth_idf = False)
+
+tfidf = tfidf_transformer.fit_transform(x)
+
+tfidf.toarray()
+```
+
+**Bag-of-words + TF-IDF**
+
+```python3
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+vectorizer = TfidfVectorizer()
+
+x = vectorizer.fit_transform(corpus) # corpus is a list of sentences (str)
+
+x.toarray()
+```
+
+**One-Hot Encoding**
 
 
 
+**Word Embeddings**
+
+
+**Word2Vec**
+
+Given neighbors predict the middle word -> Countinuous Bag of Words
+
+Given the middle word predict neighbors -> Continuous Skip-gram
+
+**Glove**
 
 
 
+**Embeddings for Deep Learning**
+
+**t-SNE**
 
 
 
