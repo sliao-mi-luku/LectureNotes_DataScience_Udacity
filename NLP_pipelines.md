@@ -120,13 +120,13 @@ lemmed = [WordNetLemmatizer().lemmatize(w, pos = 'v') for w in lemmed]
 
 `TF` (term frequency)
 
-`td(t, d) = count(t, d) / |d|`
+td(t, d) = count(t, d) / |d|
 
 `IDF` (inverse document frequency)
 
-`idf(t, D) = log(|D| / |{all d that contain t}|)`
+idf(t, D) = log(|D| / |{all d that contain t}|)
 
-**tfidf(t, d, D) = td(t, d) x idf(t, D) **
+** tfidf(t, d, D) = td(t, d) x idf(t, D) **
 
 
 
