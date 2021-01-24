@@ -27,6 +27,8 @@ soup = BeautifulSoup(r.text, "html5lib") ## or use "lxml"
 ```python3
 texts = soup.find_all("div", {"class": "the-class-name"})
 
+texts[0].prettify() # prints out the first item
+
 texts[0].select_one("h3 a").get_texts().strip()
 
 texts[0].select_one("div[the-attribute-name]")
