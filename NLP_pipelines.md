@@ -91,3 +91,41 @@ ne_chunk(pos_tag(word_tokenize("This is a pan.")))
 ```
 
 ### Stemming & Lemmatization
+
+**Porter Stemmer**
+
+```python3
+from nltk.stem.porter import PorterStemmer
+
+stemmed = [PorterStemmer().stem(w) for w in words] # words is a list of strings of words
+```
+
+**Lemmatization**
+
+```python3
+from nltk.stem.wordnet import WordNetLemmatizer
+
+# transform nouns (default)
+lemmed = [WordNetLemmatizer().lemmatize(w) for w in words] # words is a list of strings of words
+
+# transform verbs
+lemmed = [WordNetLemmatizer().lemmatize(w, pos = 'v') for w in lemmed]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
