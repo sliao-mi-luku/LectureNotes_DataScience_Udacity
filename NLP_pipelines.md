@@ -33,3 +33,19 @@ texts[0].select_one("h3 a").get_texts().strip()
 
 texts[0].select_one("div[the-attribute-name]")
 ```
+
+### Case normalization
+
+```python3
+texts = texts.lower()
+```
+
+### Remove punctuations
+
+``python3
+import re
+
+texts = re.sub(r"[^a-zA-Z0-9]", " ", text)
+```
+
+
