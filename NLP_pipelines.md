@@ -199,7 +199,7 @@ Given the middle word predict neighbors -> Continuous Skip-gram
 
 **t-SNE**
 
-
+t-Distributed Stochastic Neighbor Embedding
 
 
 
