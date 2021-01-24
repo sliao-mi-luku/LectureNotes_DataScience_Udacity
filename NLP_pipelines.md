@@ -25,7 +25,7 @@ soup = BeautifulSoup(r.text, "html5lib") ## or use "lxml"
 ### Use `BeautifulSoup` to extract 
 
 ```python3
-texts = soup.find_all("div", class_ = "the-class-name")
+texts = soup.find_all("div", {"class": "the-class-name"})
 
 texts[0].select_one("h3 a").get_texts().strip()
 
