@@ -14,6 +14,6 @@ pipeline = Pipeline([('vect', CountVectorizer()),
                      
 pipeline.fit(X_train, y_train)
 
-y_pred = pipeline.predict(X_test)
+y_pred = pipeline.predict(X_test) # the last object in the pipeline is a classifier, which has the predict method
 
 ```
