@@ -126,7 +126,7 @@ td(t, d) = count(t, d) / |d|
 
 idf(t, D) = log(|D| / |{all d that contain t}|)
 
-** tfidf(t, d, D) = td(t, d) x idf(t, D) **
+**tfidf(t, d, D) = td(t, d) x idf(t, D)**
 
 
 
