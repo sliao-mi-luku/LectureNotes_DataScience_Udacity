@@ -42,10 +42,52 @@ texts = texts.lower()
 
 ### Remove punctuations
 
-``python3
+```python3
 import re
 
 texts = re.sub(r"[^a-zA-Z0-9]", " ", text)
 ```
 
+### Tokenization
 
+```python3
+from nltk.tokenize import word_tokenize
+
+words = word_tokenize(text)
+```
+
+### Sentence Tokenization
+
+```python3
+from nltk.tokenize import sent_tokenize
+
+sentences = sent_tokenize(text) # splits a paragraph into a list of sentences
+```
+
+### Stop Word Removal
+
+```python3
+# List all stop words in English
+from nltk.corpus import stopwords
+
+print(stopwords.words("english"))
+```
+
+### Part-of-Speech Tagging
+
+```python3
+from nltk import pos_tag
+from nltk.tokenize import word_tokenize
+
+pos_tag(word_tokenize("This is a pan."))
+```
+### Named Entity Recognition
+
+```python3
+from nltk import pos_tag, ne_chunk
+from nltk.tokenize import word_tokenize
+
+ne_chunk(pos_tag(word_tokenize("This is a pan.")))
+```
+
+### Stemming & Lemmatization
