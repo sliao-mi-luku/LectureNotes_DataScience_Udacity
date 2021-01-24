@@ -1,7 +1,7 @@
 # NLP Pipelines
 
 
-## Fetching data from a website
+## Text Preprocessing
 
 ### Use `requests` to get website data
 
@@ -111,6 +111,22 @@ lemmed = [WordNetLemmatizer().lemmatize(w) for w in words] # words is a list of 
 # transform verbs
 lemmed = [WordNetLemmatizer().lemmatize(w, pos = 'v') for w in lemmed]
 ```
+
+### Feature Extraction
+
+**Bag of Words**
+
+**TF-IDF**
+
+`TF` (term frequency)
+
+`td(t, d) = count(t, d) / |d|`
+
+`IDF` (inverse document frequency)
+
+`idf(t, D) = log(|D| / |{all d that contain t}|)`
+
+**tfidf(t, d, D) = td(t, d) x idf(t, D) **
 
 
 
