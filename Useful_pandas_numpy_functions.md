@@ -24,6 +24,8 @@ Below lists several useful methods used in the study of data science.
 `df1.index.intersection(df2.index)` gives the intersection of the indexs of df1 and df2
 `df1.index.difference(df2.index)` gives the indexs of df1 which is not listed in df2
 
+---
+`df['col_name'].value_counts()` counts the elements in the column
 
 
 ## Numpy
