@@ -6,6 +6,11 @@ Below lists several useful methods used in the study of data science.
 ## Pandas
 
 ---
+`df.duplicated().sum()` returns the number of duplicted rows
+
+`df.drop_duplicates(inplace = True)` drops all duplicated rows in df
+
+---
 `df.drop(columns = 'col_name')` drops the columns specified
 
 ---
