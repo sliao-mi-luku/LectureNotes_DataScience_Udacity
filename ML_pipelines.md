@@ -68,8 +68,23 @@ transformer = FunctionTransformer(np.log1p)
 
 ## Gridsearch
 
-Method of tuning hyperparameters throughout data preprocessing and model
+Method of tuning hyperparameters throughout data preprocessing and model by using cross-validation
+
+Define a diction with key = name_of_the_parameter, and value = list_of_values_to_validate
+
+`sklearn.model_selection.GridSearchCV` https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html
 
 ```python3
+from sklearn.model_selection import GridSearchCV
 
+pipeline = Pipeline([('Scaler', StandardScaler()),
+                     ('clf', SVC())])
+
+hyperparameters_dict = {'kernel': ['linear', 'rbf],
+                   'C': [1, 10]}
+                   
+cv = GridSearchCV(pipeline, param_grid = hyperparameters_dict)
+cv.fit(X_train, y_train)
+
+y_pred = cv.predict(X_test)
 ```
