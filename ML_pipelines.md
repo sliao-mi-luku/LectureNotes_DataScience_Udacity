@@ -18,6 +18,23 @@ y_pred = pipeline.predict(X_test) # the last object in the pipeline is a classif
 
 ```
 
+## Scikit-Learn Feature Union
+
+```python3
+from sklearn.pipeline import Pipeline
+
+pipeline = Pipeline([('features', FeatureUnion([('nlp_pipeline', Pipeline([('vect', CountVectorizer()),
+                                                                           ('tfidf', TfidfTransformer())]),
+                                                 ('txt_len', TextLengthExtractor())]),
+                     ('clf', RandomForestClassifier())])
+                     
+pipeline.fit(X_train, y_train)
+
+y_pred = pipeline.predict(X_test) # the last object in the pipeline is a classifier, which has the predict method
+
+```
+
+
 ## Gridsearch
 
 Method of tuning hyperparameters throughout data preprocessing and model
