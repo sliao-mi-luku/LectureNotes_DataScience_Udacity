@@ -89,4 +89,4 @@ cv.fit(X_train, y_train)
 y_pred = cv.predict(X_test)
 ```
 
-To determine which parameters are there in the pipeline, use `pipeline.get_params()`
+To determine which parameters are there in the pipeline, use `pipeline.get_params()` or `pipeline.get_params().keys()`
