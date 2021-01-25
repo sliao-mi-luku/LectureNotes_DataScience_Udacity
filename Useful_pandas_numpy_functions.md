@@ -6,6 +6,9 @@ Below lists several useful methods used in the study of data science.
 ## Pandas
 
 ---
+`df.drop(columns = 'col_name')` drops the columns specified
+
+---
 `pd.concat([df1, df2], axis = 1)` concatenates 2 dataframes df1 and df2 horizontally (side-by-side)
 
 ---
