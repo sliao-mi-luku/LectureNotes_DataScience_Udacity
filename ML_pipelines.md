@@ -78,10 +78,10 @@ Define a diction with key = name_of_the_parameter, and value = list_of_values_to
 from sklearn.model_selection import GridSearchCV
 
 pipeline = Pipeline([('Scaler', StandardScaler()),
-                     ('clf', SVC())])
+                     ('clf', RandomForestClassifier())])
 
-hyperparameters_dict = {'kernel': ['linear', 'rbf],
-                   'C': [1, 10]}
+hyperparameters_dict = {'clf__criterion': ['gini', 'entropy'],
+                        'clf__max_features': ['auto', 'sqrt', 'log2']}
                    
 cv = GridSearchCV(pipeline, param_grid = hyperparameters_dict)
 cv.fit(X_train, y_train)
