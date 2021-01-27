@@ -8,6 +8,9 @@ Latent factors behind the user data -> hidden factors that affect an user's beha
 
 (N_user, N_movie) = (N_user, N_latent) x (N_latent, N_latent) x (N_latent, N_movie)
 
+The **square** of diagonal elements of S gives the variability it captures in the original matrix
+
+
 Better to check the dimension returned by `np.linalg.svd`
 
 ```python3
