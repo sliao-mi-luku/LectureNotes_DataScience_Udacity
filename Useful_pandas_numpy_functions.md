@@ -37,8 +37,13 @@ Below lists several useful methods used in the study of data science.
 
 
 ## Numpy
----
 
+---
 Count the number of duplicates in an ndarry
 
 `items, counts = np.unique(ndarray, return_counts = True)` 
+
+---
+`np.count_nonzero()`
+
+`np.isnan()`
