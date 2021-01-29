@@ -6,6 +6,9 @@ Below lists several useful methods used in the study of data science.
 ## Pandas
 
 ---
+`df['col_name'].isna().sum()` detects NaNs in the columns
+
+---
 `df.duplicated().sum()` returns the number of duplicted rows
 
 `df.drop_duplicates(inplace = True)` drops all duplicated rows in df
